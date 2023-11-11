@@ -39,7 +39,7 @@ testData.drop(columns=["index"], inplace=True)
 # print(len(trainData))
 threshold = 0.5
 
-TRAIN_SPLIT = 0.75
+TRAIN_SPLIT = 0.8
 VAL_SPLIT = 1 - TRAIN_SPLIT
 # set the device we will be using to train the model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

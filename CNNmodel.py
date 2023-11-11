@@ -31,8 +31,12 @@ class TwitterCNNModel(nn.Module):
         self.conv3 = self.conv3.double()
         self.fcLayer = nn.Sequential(
             nn.Linear(3*nd, 120),
+            nn.ReLU(),
+            nn.Dropout(0.5),
             nn.Linear(120, 84),
+            nn.ReLU(),
             nn.Linear(84, 2),
+            nn.ReLU(),
             nn.Softmax(dim=1)
         )
         self.fcLayer = self.fcLayer.double()
